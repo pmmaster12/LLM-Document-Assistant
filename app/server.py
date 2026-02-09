@@ -30,7 +30,7 @@ async def upload_file(file: UploadFile):
     await save_to_disk(file = await file.read() , path = file_path)
 
     #pushed to queue
-    q.enqueue(process_file,str(db_file.inserted_id))
+    q.enqueue(process_file,str(db_file.inserted_id),file_path)
 
     #updating status in mongodb
     await files_collection.update_one(
