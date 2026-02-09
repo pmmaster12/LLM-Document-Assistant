@@ -1,4 +1,9 @@
 from redis import Redis
 from rq import Queue
 
-q = Queue(connection=Redis())
+redis_connection = Redis(
+    host = "valkey",
+    port = "6379"
+)
+q = Queue(connection=redis_connection)
+

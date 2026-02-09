@@ -3,4 +3,5 @@ app/__pycache__/
 app/utils/__pycache__/
 app/db/__pycache__/
 app/db/collections/__pycache__/
+app/queue/__pycache__/
 
