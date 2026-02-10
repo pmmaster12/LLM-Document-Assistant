@@ -7,6 +7,8 @@ from ..db import database
 class FileSchema(TypedDict):
     name: str = Field(..., description="Name of the file")
     status: str = Field(..., description="Status of the file")
+    result: Optional[str] = Field(None , description="The result from AI")
+    
     # file_path: str = Field(...,description="file path")
     # result: Optional[str] = Field(None, description="The result from AI")
 
