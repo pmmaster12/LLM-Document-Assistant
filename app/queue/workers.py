@@ -13,9 +13,10 @@ client = OpenAI(
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
+# Function to encode the image
 def encode_image(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode("utf-8")
+  with open(image_path, "rb") as image_file:
+    return base64.b64encode(image_file.read()).decode('utf-8')
 
 async def process_file(id: str, file_path: str):
     await files_collection.update_one(
@@ -48,7 +49,7 @@ async def process_file(id: str, file_path: str):
 
     # CORRECTED: Use proper OpenAI-compatible API structure
     response = client.chat.completions.create(
-        model="gemini-2.0-flash-exp",  # Use correct Gemini model name
+        model="gemini-3-flash-preview",  # Use correct Gemini model name
         messages=[
             {
                 "role": "user",
